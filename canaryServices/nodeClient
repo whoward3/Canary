@@ -1,0 +1,14 @@
+#!/bin/bash
+# nodeClient
+# Description: A basic shell script to be launched by all client nodes to create traffic
+# Author: Winston Howard
+# Created Date: 02/07/20
+# Notes: This needs to be able to run from the root enviroment, cp to etc/environment...like sudo cp nodeClient /usr/bin
+
+while true;
+do
+RANGE=61
+ip=$RANDOM
+let "ip%=$RANGE"
+ping -c 1 -4 10.42.0.$ip
+done;

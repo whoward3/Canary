@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: canary-pkg-whoward3
+Version: 0.0.1
+Summary: A collection of python scripts for distributed DDoS Detection Simulations using CORE
+Home-page: https://github.com/whoward3/canary
+Author: Winston Howard
+Author-email: whoward3@uwyo.com
+License: UNKNOWN
+Description: # Canary
+        
+        Identifying the Optimal Placement of DDoS Model Checkers (Canaries) in Undirected Network Enviroments
+        
+        As the power of Distributed Denial of Service Attacks increases, early detection and mitigation become ever so important. Project Canary aims to define a rapid detection and mitigation technique to counter the aforementioned DDoS attacks.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

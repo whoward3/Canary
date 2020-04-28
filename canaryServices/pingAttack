@@ -1,0 +1,11 @@
+#!/bin/bash
+# pingAttack
+# Description: A basic shell script to be launched by the attacker service
+# Author: Winston Howard
+# Created Date: 01/14/20
+# Notes: This needs to be able to run from the root enviroment, cp to etc/environment...like sudo cp pingAttack /usr/bin
+
+while true;
+do
+ping 10.42.0.12
+done;
