@@ -1,6 +1,6 @@
 """
 canary_scraper
-Description: A short python script for scraping data from canary log files for analysis
+Description: Simple Python functions for scraping data from canary log files for analysis
 Author: Winston Howard
 Created Date: 02/23/20
 
@@ -19,8 +19,7 @@ from matplotlib.colors import hsv_to_rgb
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-class CanaryScraper():
-
+class ReportScraper():
  """
  Functions to be used to generate a summary for a report
  """
@@ -44,7 +43,7 @@ class CanaryScraper():
          report = f.read()
 
          # Compute Trial Packet Data
-         packet_list = CanaryScraper.get_packets(report)
+         packet_list = ReportScraper.get_packets(report)
          packet_report = ""
          for canary in packet_list:
              packet_report = packet_report + "Canary {} Observed Packets: {}\n".format(canary,packet_list[canary])
@@ -134,6 +133,7 @@ class CanaryScraper():
        packet_dict[p] += 1
     return packet_dict
 
+class ReportGrapher():
  """
  Functions to be used to generate a graph for a report
  """
@@ -150,7 +150,7 @@ class CanaryScraper():
     for subdirectory in subdirectories:
      print("Plotting {}".format(subdirectory))
      try:
-         res = CanaryScraper.get_detections(path+subdirectory+"/")    
+         res = ReportGrapher.get_detections(path+subdirectory+"/")    
          xpts = np.asarray(res[0])
          ypts = np.asarray(res[1])
          vpt = res[2]
@@ -259,49 +259,6 @@ class CanaryScraper():
     # Return xPts, Ypts
     return [xpts,ypts,-1]
 
- """
- Functions to generate quick graphs of a single trial
- """
- @classmethod
- def quick_grapher(self,p):
-    """
-    The function used for producing a quick bar graph
-    """
-
-    objects = ('A + C + Rnd # C', 'A + C + Std # C', 'C + Std # C')
-    y_pos = np.arange(len(objects))
-    performance = [16.74316663814642,17.017758928605843,13.540268744091367]
-
-    plt.bar(y_pos, performance, align='center', alpha=0.5)
-    plt.xticks(y_pos, objects)
-    plt.ylabel('Mean Entropy')
-
-    plt.show()
-
- @classmethod
- def trial_grapher(self,p):
-    """
-    The function used for producing a graph of a single trial
-    Note: place break in get reports after the first loop to get one trial
-    """
-
-    print("Plotting Exp 5, With Clients, and a Standard Canary Deployment")
-    res = CanaryScraper.get_detections(p)    
-    xpts = np.asarray(res[0])
-    ypts = np.asarray(res[1])
-    vpt = res[2]
-    z = np.polyfit(xpts, ypts, 1)
-    p = np.poly1d(z)         
-    
-    plt.plot(xpts, ypts, color = "red")
-    if(vpt != -1): plt.axvline(x=vpt, color="blue")
-
-    plt.title("Detection Count by Trial Progress")
-    plt.ylabel('Detections')
-    plt.xlabel('Period (Pi/Pt)')
-    plt.legend(loc='upper right')
-    plt.show()
-
 p = input("Experiment Path: ")
 print(p+"\n\n")
-CanaryScraper.report_summarizer(p)
+ReportScraper.report_summarizer(p)

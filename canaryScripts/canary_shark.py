@@ -47,7 +47,6 @@ class CanaryShark():
  def reporter(self, _log, bridge_id):
     """
     Report that an attack is underway and cease canary operations
-    TODO: Flag malicious IPs
     """
     _log.put("\n~"+str(bridge_id) + ": " + "THRESHOLD VIOLATED, TIME: " + str(datetime.datetime.now()))
 

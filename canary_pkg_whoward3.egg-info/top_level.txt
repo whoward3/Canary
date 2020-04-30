@@ -1,3 +1,0 @@
-canaryScripts
-canaryServices
-tests

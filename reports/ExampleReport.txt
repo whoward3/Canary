@@ -1,0 +1,5 @@
+CANARY REPORT: 3 Bridges, 1 Canaries, 15 Nodes
+Threshold: 3.0111
+Nodes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+Attackers: 1,0,11
+Canaries: [2]

@@ -31,7 +31,7 @@ class CanaryDriver():
 
      # essential params for the network_initalizer
      s = 1     #-s <number of switches>
-     c = 0#-0.25 #-c <attacker composition>   
+     c = -0.25 #-c <attacker composition>   
 
      # essential params for the canary_shark
      t = 3.5   #-t <entropy threshold>

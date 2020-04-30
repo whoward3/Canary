@@ -1,5 +1,17 @@
 # Canary
 
-Identifying the Optimal Placement of DDoS Model Checkers (Canaries) in Undirected Network Enviroments
+A Python Package developed as part of CEDARs Project Canary to enable the rapid simulation of Distributed DDoS Detection techniques using CORE.
 
-As the power of Distributed Denial of Service Attacks increases, early detection and mitigation become ever so important. Project Canary aims to define a rapid detection and mitigation technique to counter the aforementioned DDoS attacks.
+See the LICENSE file included in this distribution.
+
+## Get Started
+
+1. Clone this repository
+2. Open a bash terminal in the repositories root directory
+3. Run ``python3 setup.py install --user`` to install the package
+4. Run the tests via ``python3 -m tests.test_canary``
+5. If all tests pass ``OK`` your good to go!
+
+## Usage
+
+All the scripts in canaryScripts can be run independently or in conjunction depending on the use case. Scripts can be run from the terminal or loaded into the CORE GUI using the ``Execute Python script with options`` button. Use the ``canary_driver.py`` script to orchestrate the execution of multiple simulations.

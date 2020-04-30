@@ -13,7 +13,7 @@ See the LICENSE file included in this distribution.
 
 import unittest
 import queue
-from .. import canaryScripts as s
+from canaryScripts.canary_shark import CanaryShark
 
 class SimpleSharkTestCase(unittest.TestCase):
     """
@@ -21,16 +21,15 @@ class SimpleSharkTestCase(unittest.TestCase):
     """
 
     # testing canary shark evaluation function, on entropy list < threshold
-    def evaluator_test(self):
-        ip_dict = {
+    def test_evaluator(self):
+        i_dict = {
                     "10.42.0.1": 1,
-                    "10.42.0.2": 1,
-                    "10.42.0.3": 48,                    
+                    "10.42.0.2": 2,
+                    "10.42.0.3": 47,                    
                   }
-        _log = queue.Queue()
-
-        res = s.canary_shark.CanaryShark.evalutator(ip_dict,_log,0,1)
-        self.assertEqual(res,0)
+        log = queue.Queue()
+        res = CanaryShark.evalutator(ip_dict = i_dict,_log = log,bridge_id=0,thresh=0.3826)
+        self.assertEqual(res,1)
 
 if __name__ == '__main__':
     unittest.main()
