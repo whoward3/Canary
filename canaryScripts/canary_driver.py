@@ -29,7 +29,7 @@ class CanaryDriver():
      print("DRIVER: Starting Core Daemon...")
      core_daemon = subprocess.Popen(args=["sudo","core-daemon"])
 
-     # essential params for the network_initalizer
+     # essential params for the network_initializer
      s = 1     #-s <number of switches>
      c = -0.25 #-c <attacker composition>   
 
@@ -89,19 +89,19 @@ class CanaryDriver():
 
       # ensure the network is empty
       status = CanaryDriver.get_bridges()
-      if(status != "Error: No CORE Bridges found, ensure the network_initalizer executed correctly"):
+      if(status != "Error: No CORE Bridges found, ensure the network_initializer executed correctly"):
         print("DRIVER ERROR: Old session data remains")
         print(status)
         quit()
 
       # initalize a trial network
       print("DRIVER: No residual bridges found, initalizing a trial network...")   
-      initalizer_daemon = subprocess.Popen(args=["sudo","python3","network_initalizer.py","-s",str(s),"-c",str(c),"-a",str(a)])
+      initalizer_daemon = subprocess.Popen(args=["sudo","python3","network_initializer.py","-s",str(s),"-c",str(c),"-a",str(a)])
       time.sleep(20)
 
       # ensure the network is populated
       status = CanaryDriver.get_bridges()
-      if(status == "Error: No CORE Bridges found, ensure the network_initalizer executed correctly"):
+      if(status == "Error: No CORE Bridges found, ensure the network_initializer executed correctly"):
         print("DRIVER ERROR: "+status)
         quit()
       print("DRIVER: Initalization Successful! Trial {}/{}/{} network configuration: ".format(i+1,trials,l))
@@ -152,7 +152,7 @@ class CanaryDriver():
     interface_list.append(bridge_list)
 
     if len(interface_list) < 2:
-     return "Error: No CORE Bridges found, ensure the network_initalizer executed correctly"
+     return "Error: No CORE Bridges found, ensure the network_initializer executed correctly"
     else:
      return bridge_call.stdout
 

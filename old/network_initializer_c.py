@@ -1,5 +1,5 @@
 """
-network_initalizer_c
+network_initializer_c
 Description: The python script used to initalize a core network for the setup of a (c)lean trial without any attackers in the network
 Author: Winston Howard
 Created Date: 10/30/19

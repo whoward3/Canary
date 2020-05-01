@@ -1,6 +1,6 @@
 """
 canary_shark
-Description: The python script for the base canary service
+Description: The python script for the base canary service using pyshark
 Author: Winston Howard
 Created Date: 01/14/20
  
@@ -189,7 +189,7 @@ class CanaryShark():
          label = label + arg + "_"      
 
     if len(interface_list) < 2:
-     print("No CORE Bridges found, ensure the network_initalizer executed correctly")
+     print("No CORE Bridges found, ensure the network_initializer executed correctly")
      exit()
     else:
      header = "CANARY REPORT: {} Bridges, {} Canaries, {} Nodes".format(bridges,int(num_canaries),(bridges*5))

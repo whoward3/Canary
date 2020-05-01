@@ -1,6 +1,6 @@
 """
-network_initalizer
-Description: The python script used to initalize a core network for the setup of a trial
+network_initializer
+Description: The python script used to initialize a CORE network for the setup of a trial
 Author: Winston Howard
 Created Date: 10/30/19
 
@@ -26,11 +26,11 @@ import sys, getopt
 class NetworkInitalizer:
 
  @classmethod
- def network_initalizer(self, switches, composition, attackers):
+ def network_initializer(self, switches, composition, attackers):
    
-  # check that switches is <= 10
-  if(switches > 10):
-    return "Error: Can only initalize a network up to 10 switches in size"
+  # check that switches is 2 <= s <= 10
+  if(2 <= switches and switches <= 10):
+    return "Error: Can only initalize a network of 2 to 10 switches in size"
 
   # ip generator
   prefixes = IpPrefixes(ip4_prefix="10.42.0.0/16")
@@ -189,19 +189,19 @@ def main(argv):
   """
   The main function that checks for optional command line options
   """  
-  switches = random.randint(3,10)
+  switches = random.randint(2,10)
   comp = random.random()
   args = []
   attackers = -1
   try:
       opts, args = getopt.getopt(argv,"hs:c:a:",["switches=","composition=","attackers="])
   except getopt.GetoptError:
-      print ('Error: expected network_initalizer.py -s <number of switches> -c <attacker composition> -a <list of attackers>')
+      print ('Error: expected network_initializer.py -s <number of switches> -c <attacker composition> -a <list of attackers>')
       if(args): print(args)
       sys.exit(2)
   for opt, arg in opts:
       if opt == '-h':
-         print ('network_initalizer.py -s <number of switches> -c <attacker composition> -a <list of attackers>')
+         print ('network_initializer.py -s <number of switches> -c <attacker composition> -a <list of attackers>')
          sys.exit()
       elif opt in ("-s", "--switches"):
          switches = arg
@@ -209,7 +209,7 @@ def main(argv):
          comp = arg
       elif opt in ("-a", "--attackers"):
          attackers = arg
-  NetworkInitalizer.network_initalizer(int(switches),float(comp),str(attackers))
+  NetworkInitalizer.network_initializer(int(switches),float(comp),str(attackers))
 
 if __name__ in {"__main__", "__builtin__"}:
     logging.basicConfig(level=logging.INFO)
