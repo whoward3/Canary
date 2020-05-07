@@ -1,0 +1,16 @@
+README.md
+setup.py
+canaryScripts/__init__.py
+canaryScripts/canary_driver.py
+canaryScripts/canary_scraper.py
+canaryScripts/canary_shark.py
+canaryScripts/network_initializer.py
+canaryServices/__init__.py
+canaryServices/attacker.py
+canaryServices/node.py
+canary_pkg_whoward3.egg-info/PKG-INFO
+canary_pkg_whoward3.egg-info/SOURCES.txt
+canary_pkg_whoward3.egg-info/dependency_links.txt
+canary_pkg_whoward3.egg-info/top_level.txt
+tests/__init__.py
+tests/test_canary.py

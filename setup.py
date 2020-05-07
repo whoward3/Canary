@@ -18,9 +18,9 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="canary-pkg-whoward3",
-    version="0.0.1",
+    version="1.0.1",
     author="Winston Howard",
-    author_email="whoward3@uwyo.com",
+    author_email="winston.howard@yahoo.com",
     description="A collection of python scripts for distributed DDoS Detection Simulations using CORE",
     long_description=long_description,
     long_description_content_type="text/markdown",
