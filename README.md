@@ -1,8 +1,11 @@
 # Canary
+[![PyPI version](https://badge.fury.io/py/canary-pkg-whoward3.svg)](https://badge.fury.io/py/canary-pkg-whoward3)
 
 [![PyPI version](https://badge.fury.io/py/canary-pkg-whoward3.svg)](https://badge.fury.io/py/canary-pkg-whoward3)
 
 A Python Package developed as part of CEDARs Project Canary to enable the rapid simulation of Distributed DDoS Detection techniques using CORE.
+
+
 
 See the LICENSE file included in this distribution.
 
